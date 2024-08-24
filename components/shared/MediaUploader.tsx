@@ -53,7 +53,7 @@ const MediaUploader = ({
 
   return (
     <CldUploadWidget
-      uploadPreset="jsm_imaginify"
+      uploadPreset="vasu_snapaura"
       options={{
         multiple: false,
         resourceType: "image",
