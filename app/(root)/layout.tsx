@@ -4,11 +4,11 @@ import { Toaster } from '@/components/ui/toaster'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="root">
-      <Sidebar />
+    <main className="root bg-black">
+      {/* <Sidebar /> */}
       <MobileNav />
 
-      <div className="root-container">
+      <div className="root-container bg-black">
         <div className="wrapper">
           {children}
         </div>
