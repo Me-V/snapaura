@@ -21,9 +21,7 @@ const TransformedImage = ({ image, type, title, transformationConfig, isTransfor
   return (
     <div className="flex flex-col gap-4">
       <div className="flex-between">
-        <h3 className="h3-bold text-dark-600">
-          Transformed
-        </h3>
+      <h3 className="text-3xl sm:text-base md:text-xl lg:text-3xl xl:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-400">Transformed</h3>
 
         {hasDownload && (
           <button 

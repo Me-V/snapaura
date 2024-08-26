@@ -80,10 +80,12 @@ const Credits = async () => {
 
     <>
 
-       
+
 
       <GradienBackground />
-     
+      
+
+      
       {/* <div>
 
         {plans.map((plan) => (

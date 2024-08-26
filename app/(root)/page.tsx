@@ -6,6 +6,7 @@ import Link from "next/link"
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { FloatingDock } from "@/components/ui/floating-dock";
+import { UserButton } from "@clerk/nextjs"
 
 
 
@@ -110,6 +111,13 @@ const Home = async ({ searchParams }: SearchParamProps) => {
       ),
       href: "/credits",
     },
+    {
+      title: "You",
+      icon: (
+        <UserButton afterSignOutUrl='/' />
+      ),
+      href: "#",
+    },
   ];
 
   const words = [
@@ -141,7 +149,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
     <>
 
       <div className="rounded-3xl sm:overflow-hidden z-10 relative border-double flex items-center justify-center text-center">
-        <BackgroundBeamsWithCollision className="bg-black overflow-hidden w-full max-h-[60vh] flex flex-col items-center justify-center">
+        <BackgroundBeamsWithCollision className="bg-transparent overflow-hidden w-full max-h-[60vh] flex flex-col items-center justify-center">
 
           <div className="flex flex-col justify-center items-center relative mx-auto w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
             <Image src="/assets/images/sa.png" alt="image" width={180} height={180} />

@@ -37,7 +37,7 @@ const GradienBackground = () => {
             {plans.map((plan) => (
               <li
                 key={plan.name}
-                className="w-full max-w-xs lg:max-w-sm flex flex-col items-center bg-black rounded-lg p-4"
+                className="w-full max-w-xs lg:max-w-sm flex flex-col items-center bg-transparent rounded-lg p-4"
               >
                 <BackgroundGradient className="flex flex-col items-center justify-center rounded-[22px] h-[40vh] w-full p-4 sm:p-10 bg-zinc-900 dark:bg-zinc-900">
                   <Image src={plan.icon} alt="check" width={50} height={50} />

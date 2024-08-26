@@ -16,11 +16,18 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
 
   return (
     <>
-      <Header title={image.title} />
+
+
+      <div className="flex flex-row justify-between items-center">
+
+        <Header title={image.title} />
+        <div className='hidden lg:block'> <Link href="/">   <Image src="/assets/images/sa.png" alt="image" width={150} height={150} /></Link>
+        </div>
+      </div>
 
       <section className="mt-5 flex flex-wrap gap-4">
         <div className="p-14-medium md:p-16-medium flex gap-2">
-          <p className="text-dark-600">Transformation:</p>
+          <p className="text-purple-400">Transformation:</p>
           <p className=" capitalize text-purple-400">
             {image.transformationType}
           </p>

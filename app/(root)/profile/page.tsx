@@ -6,6 +6,7 @@ import { Collection } from "@/components/shared/Collection";
 import Header from "@/components/shared/Header";
 import { getUserImages } from "@/lib/actions/image.actions";
 import { getUserById } from "@/lib/actions/user.actions";
+import Link from "next/link";
 
 const Profile = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
@@ -18,7 +19,14 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
-      <Header title="Profile" />
+
+
+      <div className="flex flex-row justify-between items-center">
+
+        <Header title="Profile" />
+        <div className='hidden lg:block'> <Link href="/">   <Image src="/assets/images/sa.png" alt="image" width={150} height={150} /></Link>
+        </div>
+      </div>
 
       <section className="profile">
         <div className="profile-balance">
