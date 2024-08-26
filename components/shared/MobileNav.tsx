@@ -17,7 +17,6 @@ const MobileNav = () => {
         <p className="text-[1.75rem] sm:text-base md:text-xl lg:text-3xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600">
           Snap Aura
         </p>
-
       </Link>
 
       <nav className="flex gap-2">
@@ -34,7 +33,7 @@ const MobileNav = () => {
                 className="cursor-pointer"
               />
             </SheetTrigger>
-            <SheetContent className="sheet-content sm:w-64">
+            <SheetContent className="sheet-content sm:w-64 h-full overflow-y-auto">
               <>
                 <Image
                   src="/assets/images/logo-text.svg"
