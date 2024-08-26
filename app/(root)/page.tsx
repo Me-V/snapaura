@@ -146,7 +146,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
           <div className="flex flex-col justify-center items-center relative mx-auto w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
             <Image src="/assets/images/sa.png" alt="image" width={180} height={180} />
 
-            <div className="flex flex-col items-center justify-center h-[2rem] mt-4">
+            <div className="flex flex-col items-center justify-center h-[2rem] mt-4 text-xl">
               <TypewriterEffectSmooth words={words} />
             </div>
 
