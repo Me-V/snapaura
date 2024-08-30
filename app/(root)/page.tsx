@@ -148,7 +148,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
   return (
     <>
 
-      <div>
+      <div className="hidden md:flex">
         <SignedIn>
           <UserButton afterSignOutUrl='/' />
         </SignedIn>
