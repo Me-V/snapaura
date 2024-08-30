@@ -6,7 +6,7 @@ import Link from "next/link"
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { FloatingDock } from "@/components/ui/floating-dock";
-import { UserButton } from "@clerk/nextjs"
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 
 
 
@@ -111,13 +111,13 @@ const Home = async ({ searchParams }: SearchParamProps) => {
       ),
       href: "/credits",
     },
-    {
-      title: "You",
-      icon: (
-        <UserButton afterSignOutUrl='/' />
-      ),
-      href: "#",
-    },
+    // {
+    //   title: "You",
+    //   icon: (
+    //     <UserButton afterSignOutUrl='/' />
+    //   ),
+    //   href: "#",
+    // },
   ];
 
   const words = [
@@ -147,6 +147,17 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
+
+      <div>
+        <SignedIn>
+          <UserButton afterSignOutUrl='/' />
+        </SignedIn>
+        <SignedOut>
+          <Link href='/sign-in'>
+            <p className="text-3xl sm:text-base md:text-xl lg:text-3xl xl:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600">Login</p>
+          </Link>
+        </SignedOut>
+      </div>
 
       <div className="rounded-3xl sm:overflow-hidden z-10 relative border-double flex items-center justify-center text-center">
         <BackgroundBeamsWithCollision className="bg-transparent overflow-hidden w-full max-h-[60vh] flex flex-col items-center justify-center">
