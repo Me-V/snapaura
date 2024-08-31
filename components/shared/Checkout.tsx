@@ -2,11 +2,12 @@
 
 import { loadStripe } from "@stripe/stripe-js";
 import { useEffect } from "react";
+import { Button } from "../ui/moving-border";
 
 import { useToast } from "@/components/ui/use-toast";
 import { checkoutCredits } from "@/lib/actions/transaction.action";
 
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 
 const Checkout = ({
   plan,
@@ -61,12 +62,20 @@ const Checkout = ({
   return (
     <form action={onCheckout} method="POST">
       <section>
-        <Button
+        {/* <Button
           type="submit"
           role="link"
-          className="w-full rounded-full bg-purple-gradient bg-cover"
+          className="w-[10vw] rounded-full bg-purple-gradient bg-cover"
         >
-          Buy Credit
+          Buy
+        </Button> */}
+        <Button
+          borderRadius="1.2rem"
+          type="submit"
+          role="link"
+          className="bg-purple-900 w-full dark:bg-slate-900 text-white border-purple-800 dark:border-purple-800"
+        >
+          Buy Credits
         </Button>
       </section>
     </form>

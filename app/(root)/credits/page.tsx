@@ -8,6 +8,7 @@ import { plans } from "@/constants";
 import { getUserById } from "@/lib/actions/user.actions";
 import Checkout from "@/components/shared/Checkout";
 import GradienBackground from "@/components/shared/GradienBackground";
+import Link from "next/link"
 
 const Credits = async () => {
   const { userId } = auth();
@@ -80,34 +81,73 @@ const Credits = async () => {
 
     <>
 
+      <div className="flex flex-col justify-center items-center">
 
+        <div className="flex flex-row justify-between items-center gap-[100vh]">
 
-      <GradienBackground />
-      
+          <Header
+            title="Buy Credits"
+          // subtitle="Choose a credit package that suits your needs!"
+          />
 
-      
-      {/* <div>
-
-        {plans.map((plan) => (
-          <div key={plan._id}>
-            {plan.name === "Free" ? (
-              <Button variant="outline" className="credits-btn">
-                Free Consumable
-              </Button>
-            ) : (
-              <SignedIn>
-                <Checkout
-                  plan={plan.name}
-                  amount={plan.price}
-                  credits={plan.credits}
-                  buyerId={user._id}
-                />
-              </SignedIn>
-            )}
+          <div className="hidden lg:block">
+            <Link href="/">
+              <Image src="/assets/images/sa.png" alt="image" width={150} height={150} />
+            </Link>
           </div>
-        ))}
 
-      </div> */}
+        </div>
+
+
+        <div className="mt-10 flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-16">
+
+          <div className="flex flex-col items-center ">
+
+            {/* {plans.map((plan) => (
+<div key={plan._id}> */}
+            <p className="mb-3">Buy Pro Package</p>
+            <SignedIn>
+              <Checkout
+                plan={plans[1].name}
+                amount={plans[1].price}
+                credits={plans[1].credits}
+                buyerId={user._id}
+              />
+
+            </SignedIn>
+
+            {/* </div>
+))} */}
+
+          </div>
+
+          <div className="flex flex-col items-center ">
+
+            {/* {plans.map((plan) => (
+<div key={plan._id}> */}
+            <p className="mb-3">Buy Premiuim Package</p>
+            <SignedIn>
+              <Checkout
+                plan={plans[2].name}
+                amount={plans[2].price}
+                credits={plans[2].credits}
+                buyerId={user._id}
+              />
+
+            </SignedIn>
+
+            {/* </div>
+))} */}
+
+          </div>
+        </div>
+        <GradienBackground />
+      </div>
+
+
+
+
+
 
     </>
 

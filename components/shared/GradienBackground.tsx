@@ -11,7 +11,7 @@ const GradienBackground = () => {
   return (
     <>
 
-      <div className="flex flex-row justify-between items-center">
+      {/* <div className="flex flex-row justify-between items-center">
 
         <Header
           title="Buy Credits"
@@ -24,7 +24,7 @@ const GradienBackground = () => {
           </Link>
         </div>
 
-      </div>
+      </div> */}
 
 
 
@@ -73,12 +73,12 @@ const GradienBackground = () => {
             ))}
           </ul>
         </div>
-        <Button
+        {/* <Button
           borderRadius="1.2rem"
           className="bg-purple-900 w-full dark:bg-slate-900 text-white border-purple-800 dark:border-purple-800"
         >
           Buy Credits
-        </Button>
+        </Button> */}
       </div>
     </>
   );
