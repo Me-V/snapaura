@@ -1,15 +1,21 @@
 "use client"
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { navLinks } from "@/constants"
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
-import Image from "next/image"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Button } from "../ui/button"
+import { useState } from "react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { navLinks } from "@/constants";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Button } from "../ui/button";
 
 const MobileNav = () => {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setIsOpen(false); // Close the sidebar when a link is clicked
+  };
 
   return (
     <header className="header">
@@ -23,7 +29,7 @@ const MobileNav = () => {
         <SignedIn>
           <UserButton afterSignOutUrl="/" />
 
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger>
               <Image
                 src="/assets/icons/menu.svg"
@@ -44,14 +50,18 @@ const MobileNav = () => {
 
                 <ul className="header-nav_elements">
                   {navLinks.map((link) => {
-                    const isActive = link.route === pathname
+                    const isActive = link.route === pathname;
 
                     return (
                       <li
-                        className={`${isActive && 'gradient-text'} p-18 flex whitespace-nowrap text-dark-700`}
+                        className={`${isActive && "gradient-text"} p-18 flex whitespace-nowrap text-dark-700`}
                         key={link.route}
                       >
-                        <Link className="sidebar-link cursor-pointer" href={link.route}>
+                        <Link
+                          className="sidebar-link cursor-pointer"
+                          href={link.route}
+                          onClick={handleLinkClick} // Close sidebar on link click
+                        >
                           <Image
                             src={link.icon}
                             alt="logo"
@@ -61,7 +71,7 @@ const MobileNav = () => {
                           {link.label}
                         </Link>
                       </li>
-                    )
+                    );
                   })}
                 </ul>
               </>
@@ -76,7 +86,7 @@ const MobileNav = () => {
         </SignedOut>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default MobileNav
+export default MobileNav;

@@ -3,10 +3,10 @@ import React from 'react';
 const Loading = () => {
   return (
     <div className="flex items-center justify-center fixed inset-0 bg-black bg-opacity-75 z-50">
-      <div role="status">
+      <div className="flex flex-col items-center justify-center space-y-4">
         <svg
           aria-hidden="true"
-          className="w-16 h-16 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+          className="w-16 h-16 text-gray-200 animate-spin fill-purple-600"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,9 @@ const Loading = () => {
             fill="currentFill"
           />
         </svg>
-        <span className="sr-only">Loading...</span>
+        <span className="text-xl sm:text-2xl md:text-xl lg:text-2xl xl:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600">
+          Loading...
+        </span>
       </div>
     </div>
   );
