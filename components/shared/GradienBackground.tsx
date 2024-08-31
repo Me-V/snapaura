@@ -3,9 +3,9 @@ import React from "react";
 import { BackgroundGradient } from "../ui/background-gradient";
 import Image from "next/image";
 import { plans } from "@/constants";
-import Header from "./Header";
-import { Button } from "../ui/moving-border";
-import Link from "next/link";
+// import Header from "./Header";
+// import { Button } from "../ui/moving-border";
+// import Link from "next/link";
 
 const GradienBackground = () => {
   return (
