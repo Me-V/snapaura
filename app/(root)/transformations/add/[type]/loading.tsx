@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loading = () => {
   return (
-    <div className="flex items-center justify-center fixed inset-0 bg-black bg-opacity-75 z-50">
+    <div className="flex items-center justify-center fixed inset-0 bg-black bg-opacity-100 z-50">
       <div className="flex flex-col items-center justify-center space-y-4">
         <svg
           aria-hidden="true"
