@@ -39,9 +39,9 @@ const MobileNav = () => {
                 className="cursor-pointer"
               />
             </SheetTrigger>
-            <SheetContent className="sheet-content sm:w-64 h-full overflow-y-auto">
+            <SheetContent className="sheet-content sm:w-64 h-full overflow-y-auto bg-black">
               <>
-                <p className="text-[2.75rem] sm:text-base md:text-xl lg:text-3xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-black via-black to-black">Snap Aura</p>
+                <p className="text-[1.75rem] sm:text-base md:text-xl lg:text-3xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600">Snap Aura</p>
 
                 <ul className="header-nav_elements">
                   {navLinks.map((link) => {
