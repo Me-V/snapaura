@@ -1,12 +1,14 @@
 import { Collection } from "@/components/shared/Collection"
 // import { navLinks } from "@/constants"
-import { getAllImages } from "@/lib/actions/image.actions"
+import { getUserImages } from "@/lib/actions/image.actions"
 import Image from "next/image"
 import Link from "next/link"
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { FloatingDock } from "@/components/ui/floating-dock";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+import { auth, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+import { redirect } from "next/navigation";
+import { getUserById } from "@/lib/actions/user.actions";
 
 
 
@@ -141,9 +143,12 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 
 
   const page = Number(searchParams?.page) || 1;
-  const searchQuery = (searchParams?.query as string) || '';
+  // const searchQuery = (searchParams?.query as string) || '';
+  const { userId } = auth();
+  if (!userId) redirect("/sign-in");
 
-  const images = await getAllImages({ page, searchQuery })
+  const user = await getUserById(userId);
+  const images = await getUserImages({ page, userId: user._id });
 
   return (
     <>
@@ -224,10 +229,10 @@ const Home = async ({ searchParams }: SearchParamProps) => {
       </section> */}
 
       <section className="mt-20">
-        <Collection
-          hasSearch={true}
+       <Collection
+          // hasSearch={true}
           images={images?.data}
-          totalPages={images?.totalPage}
+          totalPages={images?.totalPages}
           page={page}
         />
       </section>
